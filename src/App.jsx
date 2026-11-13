@@ -88,9 +88,9 @@ function App() {
   return (
     <main className="page-shell">
       <header className="topbar">
-        <a className="brand" href="/" aria-label="People directory home">
-          <span className="brand-mark" aria-hidden="true">P</span>
-          <span>People<span className="brand-light"> directory</span></span>
+        <a className="brand" href="/" aria-label="Employees directory home">
+          <span className="brand-mark" aria-hidden="true">E</span>
+          <span>Employees<span className="brand-light"> directory</span></span>
         </a>
         <span className="privacy-note"><span className="privacy-dot" /> Stored on this device</span>
       </header>
@@ -99,7 +99,7 @@ function App() {
         <div className="page-heading">
           <div>
             <p className="eyebrow">YOUR WORKSPACE</p>
-            <h1>People</h1>
+            <h1>Employees</h1>
             <p className="subtitle">Keep your team’s contact details in one place.</p>
           </div>
           <button className="button button-primary" onClick={() => openForm()}>
@@ -109,18 +109,18 @@ function App() {
 
         {storageError && <p className="notice" role="alert">{storageError}</p>}
 
-        <section className="directory-card" aria-label="People directory">
+        <section className="directory-card" aria-label="Employees directory">
           <div className="directory-toolbar">
             <div>
-              <h2>All people <span className="count">{users.length}</span></h2>
-              <p>{users.length === 1 ? "One person in your directory" : `${users.length} people in your directory`}</p>
+              <h2>All employees <span className="count">{users.length}</span></h2>
+              <p>{users.length === 1 ? "One person in your directory" : `${users.length} employees in your directory`}</p>
             </div>
             <label className="search-box">
               <span className="search-icon" aria-hidden="true">⌕</span>
-              <span className="sr-only">Search people</span>
+              <span className="sr-only">Search employees</span>
               <input
                 type="search"
-                placeholder="Search people..."
+                placeholder="Search employees..."
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
               />
@@ -130,7 +130,7 @@ function App() {
           {filteredUsers.length === 0 ? (
             <div className="empty-state">
               <div className="empty-icon" aria-hidden="true">♧</div>
-              <h3>{query ? "No matching people" : "Your directory is empty"}</h3>
+              <h3>{query ? "No matching employees" : "Your directory is empty"}</h3>
               <p>{query ? "Try a different name, email, role, or department." : "Add your first person to get your directory started."}</p>
               {!query && (
                 <button className="button button-secondary" onClick={() => openForm()}>
@@ -177,7 +177,7 @@ function App() {
             </div>
           )}
           {query && filteredUsers.length > 0 && (
-            <div className="filter-summary">Showing {filteredUsers.length} of {users.length} people</div>
+            <div className="filter-summary">Showing {filteredUsers.length} of {users.length} employees</div>
           )}
         </section>
         <footer className="page-footer">Your directory is private and saved only in this browser.</footer>
